@@ -1,0 +1,39 @@
+# ______________________________________________________________________________________________________________________
+# in place merge sort with Time O(n^2 log(n)) and Space O(1)
+# ______________________________________________________________________________________________________________________
+def merge(nums, arr1, m, end):
+    arr2 = m + 1
+
+    # # If the direct merge is already sorted
+    # if nums[mid] <= nums[start2]:
+    #     return
+
+    # Two pointers to maintain start
+    # of both arrays to merge
+    while arr1 <= m and arr2 <= end:
+
+        if nums[arr1] <= nums[arr2]:
+            arr1 += 1  # all right
+        else:
+            temp = nums[arr2]
+            i = arr2
+
+            # Moving all elements to the right to be inplace
+            while i != arr1:
+                nums[i] = nums[i - 1]
+                i -= 1
+            # changing value
+            nums[arr1] = temp
+
+            arr1 += 1
+            m += 1
+            arr2 += 1
+
+
+def mergeSort_inplace(nums, l, r):
+    if l < r:
+        m = l + (r - l) // 2
+        mergeSort_inplace(nums, l, m)  # "dividing" arrays
+        mergeSort_inplace(nums, m + 1, r)
+
+        merge(nums, l, m, r)
