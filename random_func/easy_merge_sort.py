@@ -1,4 +1,4 @@
-def merge_sort(arr):
+def easy_merge_sort(arr):
     if len(arr) > 1:
         # dividing array
         left_arr = arr[:len(arr) // 2]
