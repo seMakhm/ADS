@@ -1,5 +1,5 @@
 # ______________________________________________________________________________________________________________________
-# timsort, insertion sort for timsort, merge for timsort
+# timsort, insertion sort for timsort, merge for timsort пока не понял
 # ______________________________________________________________________________________________________________________
 def insertion_sort(nums, left=0, right=None):
     if right is None:
